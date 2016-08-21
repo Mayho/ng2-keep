@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { AppBar } from '../components'
+import { Notes } from './notes'
 
 @Component({
   selector: 'main-container',
-  directives: [ AppBar ],
+  directives: [ AppBar, Notes ],
   template: `
     <div>
       <app-bar></app-bar>
       <main class="main">
-        content goes here
+        <notes-container></notes-container>
       </main>
     </div>
   `
