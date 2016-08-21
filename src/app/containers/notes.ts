@@ -1,9 +1,9 @@
 import { Component } from '@angular/core'
-import { NoteCard } from '../components'
+import { NoteCard, NoteCreator } from '../components'
 
 @Component({
   selector: 'notes-container',
-  directives: [ NoteCard ],
+  directives: [ NoteCard, NoteCreator ],
   styles: [`
     .notes {
       padding-top: 50px;
@@ -15,7 +15,7 @@ import { NoteCard } from '../components'
   template: `
     <div class="row center-xs notes">
       <div class="col-xs-6 creator">
-        note creator here
+        <note-creator (createNote)="onCreateNote($event)"></note-creator>
       </div>
       <div class="notes col-xs-8">
         <div class="row between-xs">
@@ -41,5 +41,9 @@ export class Notes {
 
   onNoteChecked (note, i) {
     this.notes.splice(i, 1)
+  }
+
+  onCreateNote (note) {
+    this.notes.push(note)
   }
 }
