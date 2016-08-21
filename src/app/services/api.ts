@@ -13,7 +13,7 @@ export class ApiService {
 
   api_url: string = 'http://localhost:3500'
 
-  constructor(private http: Http) {}
+  constructor (private http: Http) {}
 
   private getJSON(response: Response) {
     return response.json()
@@ -56,5 +56,10 @@ export class ApiService {
     .map(this.checkForError)
     .catch(err => Observable.throw(err))
     .map(this.getJSON)
+  }
+
+  setHeaders (headers) {
+    Object.keys(headers)
+    .forEach(header => this.headers.set(header, headers[header]))
   }
 }

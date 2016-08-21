@@ -3,7 +3,7 @@ import { Store } from '../store'
 
 @Injectable()
 export class StoreReducers {
-  constructor(private store: Store) {}
+  constructor (private store: Store) {}
 
   update (prop, state) {
     const currentState = this.store.getState()

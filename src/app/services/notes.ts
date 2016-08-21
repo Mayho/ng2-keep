@@ -5,7 +5,7 @@ import 'rxjs/Rx'
 
 @Injectable()
 export class NoteService {
-  constructor(
+  constructor (
     private apiService: ApiService,
     private storeReducers: StoreReducers
   ) {}
