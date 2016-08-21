@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnDestroy } from '@angular/core'
 import { NoteCard, NoteCreator } from '../components'
 import { NoteService } from '../services'
 
@@ -33,8 +33,13 @@ import { NoteService } from '../services'
   `
 })
 
-export class Notes {
+export class Notes implements OnDestroy {
   notes = []
+
+  ngOnDestroy () {
+    console.log('destroyed')
+  }
+
   constructor(private noteService: NoteService) {
     this.noteService.getNotes()
       .subscribe(res => this.notes = res.data)
