@@ -49,7 +49,6 @@ export class Notes implements OnDestroy {
       .subscribe()
   }
 
-
   onNoteChecked (note, i) {
     this.noteService.completeNote(note)
       .subscribe()
@@ -57,6 +56,6 @@ export class Notes implements OnDestroy {
 
   onCreateNote (note) {
     this.noteService.createNote(note)
-      .subscribe(note => this.notes.push(note))
+      .subscribe()
   }
 }
