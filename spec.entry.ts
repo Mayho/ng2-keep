@@ -20,6 +20,7 @@ import {
 } from '@angular/platform-browser-dynamic/testing'
 
 import './src/app/services/api.spec'
+import './src/app/components/note-card.spec'
 
 setBaseTestProviders(
   TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
