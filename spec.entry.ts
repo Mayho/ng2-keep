@@ -19,7 +19,9 @@ import {
   TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
 } from '@angular/platform-browser-dynamic/testing'
 
+import './src/app/services/api.spec'
+
 setBaseTestProviders(
   TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
-  TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS 
+  TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
 )
